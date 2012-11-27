@@ -13,3 +13,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+.bundle
+# config/database.yml
+# config/application.yml
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+.DS_Store
