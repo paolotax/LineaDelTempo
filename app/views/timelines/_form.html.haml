@@ -1,0 +1,33 @@
+= form_for @timeline do |f|
+  - if @timeline.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@timeline.errors.count, "error")} prohibited this timeline from being saved:"
+      %ul
+        - @timeline.errors.full_messages.each do |msg|
+          %li= msg
+  .fields
+    = f.label :headline
+    = f.text_field :headline, html: {class: "input-large"}
+
+  .fields
+    = f.label :startDate
+    = f.text_field :startDate
+
+  .fields
+    = f.label :text
+    = f.text_area :text
+
+  .fields
+    = f.label :media
+    = f.text_field :media
+
+  .fields
+    = f.label :credit
+    = f.text_field :credit
+
+  .fields
+    = f.label :caption
+    = f.text_field :caption
+
+  .actions
+    = f.submit 'Salva', class: "btn btn-primary"

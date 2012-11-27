@@ -1,0 +1,17 @@
+%h1 Listing timeline_events
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @timeline_events.each do |timeline_event|
+    %tr
+      %td= link_to 'Show', timeline_event
+      %td= link_to 'Edit', edit_timeline_event_path(timeline_event)
+      %td= link_to 'Destroy', timeline_event, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Timeline event', new_timeline_event_path

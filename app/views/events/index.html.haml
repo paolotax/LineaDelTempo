@@ -1,0 +1,24 @@
+%h1 Eventi
+
+%table.table
+  %tr
+    %th Headline
+    %th Start
+    %th End
+    %th Caption
+    %th 
+    %th
+
+  - @events.each do |event|
+    %tr
+      %td= link_to event.headline, event
+      %td= event.startDate
+      %td= event.endDate
+      %td= event.caption
+      
+      %td= link_to 'Modifica', edit_event_path(event)
+      %td= link_to 'Elimina', event, method: :delete, data: { confirm: 'Sei Sicuro?' }
+
+%br
+
+= link_to 'Nuovo Evento', new_event_path

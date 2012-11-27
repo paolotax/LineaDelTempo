@@ -1,0 +1,70 @@
+{
+    "timeline":
+    {
+        "headline":"The Main Timeline Headline Goes here",
+        "type":"default",
+        "startDate":"2011,10,10",
+        "text":"<p>Intro body text goes here, some HTML is ok</p>",
+        "asset": {
+            "media":"http://yourdomain_or_socialmedialink_goes_here.jpg",
+            "credit":"Credit Name Goes Here",
+            "caption":"Caption text goes here"
+        },
+        "date": [
+            {
+                "startDate":"2011,12,10",
+                "endDate":"2011,12,11",
+                "headline":"date Headline",
+                "text":"<p>date text</p>",
+                "tag":"date tag",
+                "asset": {
+                    "media":"http://www.claudiopenna.it/prime/immagini/lirbo_morti.JPG",
+                    "thumbnail":"optional-32x32px.jpg",
+                    "credit":"date credit",
+                    "caption":"date caption"
+                }
+            },
+            {
+                "startDate":"2011,12,10",
+                "endDate":"2011,12,11",
+                "headline":"another date Headline",
+                "text":"<p>another date text</p>",
+                "tag":"another date tag",
+                "asset": {
+                    "media":"https://twitter.com/rbates/status/272803797162668032",
+                    "thumbnail":"optional-32x32px.jpg",
+                    "credit":"another date credit",
+                    "caption":"another date caption"
+                }
+            },
+            {
+                "startDate":"2011,12,10",
+                "endDate":"2011,12,11",
+                "headline":"yet another date Headline",
+                "text":"<p>yet another date text</p>",
+                "tag":"yert another date tag",
+                "asset": {
+                    "media":"https://maps.google.it/maps?q=maps+egitto&ie=UTF-8&hq=&hnear=0x14368976c35c36e9:0x2c45a00925c4c444,Egitto&gl=it&ei=ULKzUIjfC8b1sgaWxIHwDw&ved=0CC8Q8gEwAA",
+                    "thumbnail":"optional-32x32px.jpg",
+                    "credit":"yet another date credit",
+                    "caption":"yet another date caption"
+                }
+            }
+
+        ],
+        "era": [
+            {
+                "startDate":"2011,12,10",
+                "endDate":"2012,4,11",
+                "headline":"ERA dei Cazzoni"
+            },
+            {
+                "startDate":"2012,3,1",
+                "endDate":"2012,12,11",
+                "headline":"ERA dei Barboni"
+            }
+
+
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+%h1 Listing timelines
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @timelines.each do |timeline|
+    %tr
+      %td= link_to 'Show', timeline
+      %td= link_to 'Edit', edit_timeline_path(timeline)
+      %td= link_to 'Destroy', timeline, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Timeline', new_timeline_path

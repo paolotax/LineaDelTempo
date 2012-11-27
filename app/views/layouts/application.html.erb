@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LineaDelTempo</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "/js/storyjs-embed.js" %>
+  <%= javascript_include_tag "/js/timeline-min.js" %>
+  <%= javascript_include_tag "/js/locale/it.js" %>
+  <%= stylesheet_link_tag    "/css/timeline.css" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+      <%= yield %>
+    </div>
+    <div class="span8">
+      <%= render 'layouts/timeline' %>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

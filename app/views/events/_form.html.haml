@@ -1,0 +1,44 @@
+= form_for @event do |f|
+  - if @event.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+      %ul
+        - @event.errors.full_messages.each do |msg|
+          %li= msg
+  .fields
+    = f.label :headline
+    = f.text_field :headline, class: "input-xxlarge"
+  .fields
+    = f.label :startDate
+    = f.text_field :startDate
+
+  .fields
+    = f.label :endDate
+    = f.text_field :endDate
+
+  .fields
+    = f.label :text
+    = f.text_area :text, class: "input-xxlarge"
+
+  .fields
+    = f.label :media
+    = f.text_field :media
+
+  .fields
+    = f.label :credit
+    = f.text_field :credit, class: "input-xxlarge"
+
+  .fields
+    = f.label :caption
+    = f.text_field :caption, class: "input-xxlarge"
+
+  .fields
+    = f.label :thumbnail
+    = f.text_field :thumbnail, class: "input-xxlarge"
+
+  .fields
+    = f.label :media_filename
+    = f.text_field :media_filename, class: "input-xxlarge"
+
+  .actions
+    = f.submit 'Salva', class: "btn btn-primary"
