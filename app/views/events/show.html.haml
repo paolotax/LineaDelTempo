@@ -1,4 +1,4 @@
-%p#notice= notice
+%p.alert= notice
 
 
 %h1
@@ -6,18 +6,28 @@
 
 %p
   = [@event.startDate, @event.endDate].join(" -> ") 
+  
+%p
+  = @event.text
+
+%p
+  = @event.media  
+
+%p
+  = @event.credit  
 
 %p
   = @event.caption  
 
 %p
-  = @event.text
-
-= youtube_embed("#{@event.media_filename}")
+  = @event.thumbnail  
 
 %p
   = @event.media_filename
 
+= youtube_embed("#{@event.media_filename}")
+
+%br
 
 = link_to 'Modifica', edit_event_path(@event)
 \|

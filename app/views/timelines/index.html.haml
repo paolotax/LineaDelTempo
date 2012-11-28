@@ -1,17 +1,40 @@
-%h1 Listing timelines
+%h1 Linee del Tempo
 
-%table
+%ul.thumbnails
+  - @timelines.each do |timeline|
+    %li.span3
+      = link_to(timeline, :class => :thumbnail) do
+        - if timeline.media.blank?
+          - if !timeline.events.where('media IS NOT NULL').order("events.startDate").limit(1).first.blank?
+            = image_tag timeline.events.where('media IS NOT NULL').order("events.startDate").limit(1).first.media 
+        - else
+          = image_tag timeline.media
+        %h5= timeline.headline
+        %p= timeline.caption
+
+
+%br
+%table.table
   %tr
-    %th
-    %th
-    %th
+    %th Titolo
+    %th Dal
+    %th Testo
+    %th 
+    %th 
 
   - @timelines.each do |timeline|
     %tr
-      %td= link_to 'Show', timeline
-      %td= link_to 'Edit', edit_timeline_path(timeline)
-      %td= link_to 'Destroy', timeline, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to timeline.headline, timeline
+      %td= timeline.startDate
+      %td= "#{timeline.text[0..30]}..."
+      %td= link_to 'Modifica', edit_timeline_path(timeline)
+      %td= link_to 'Elimina', timeline, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Timeline', new_timeline_path
+
+= link_to 'Nuova Linea del Tempo', new_timeline_path
+|
+= link_to 'Linee del Tempo', timelines_path
+|
+= link_to 'Eventi', events_path

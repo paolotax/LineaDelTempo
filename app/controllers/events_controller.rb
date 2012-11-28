@@ -1,12 +1,10 @@
 class EventsController < ApplicationController
-  # GET /events
-  # GET /events.json
-  def index
-    @events = Event.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @events }
+  def index
+    if params[:query].present?
+       @events = Event.search(params[:query])
+    else
+       @events = Event.all
     end
   end
 

@@ -1,0 +1,5 @@
+= form_tag events_path, :method => :get do
+  %p
+    = text_field_tag :query, params[:query]
+    = submit_tag "Cerca Eventi", :name => nil
+    = link_to 'annulla ricerca', events_path if defined?(@events)

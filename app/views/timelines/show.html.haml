@@ -1,6 +1,26 @@
-%p#notice= notice
+%p.alert= notice
+
+%h1
+  = @timeline.headline
+
+%p
+  = @timeline.startDate
+
+%p
+  = @timeline.text
+
+%p
+  = @timeline.media  
+
+%p
+  = @timeline.credit
+
+%p
+  = @timeline.caption  
 
 
-= link_to 'Edit', edit_timeline_path(@timeline)
-\|
-= link_to 'Back', timelines_path
+= link_to 'Modifica', edit_timeline_path(@timeline)
+|
+= link_to 'Linee del Tempo', timelines_path
+|
+= link_to 'Eventi', events_path

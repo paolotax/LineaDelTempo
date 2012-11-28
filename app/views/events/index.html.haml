@@ -1,11 +1,15 @@
 %h1 Eventi
+%br
+
+= render 'search_form'
+
 
 %table.table
   %tr
-    %th Headline
-    %th Start
-    %th End
-    %th Caption
+    %th Titolo
+    %th Dal
+    %th Al
+    %th Testo
     %th 
     %th
 
@@ -14,7 +18,7 @@
       %td= link_to event.headline, event
       %td= event.startDate
       %td= event.endDate
-      %td= event.caption
+      %td= "#{event.text[0..30]}..."
       
       %td= link_to 'Modifica', edit_event_path(event)
       %td= link_to 'Elimina', event, method: :delete, data: { confirm: 'Sei Sicuro?' }
@@ -22,3 +26,7 @@
 %br
 
 = link_to 'Nuovo Evento', new_event_path
+|
+= link_to 'Eventi', events_path
+|
+= link_to 'Linee del Tempo', timelines_path

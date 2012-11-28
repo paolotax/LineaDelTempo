@@ -6,39 +6,52 @@
         - @event.errors.full_messages.each do |msg|
           %li= msg
   .fields
-    = f.label :headline
-    = f.text_field :headline, class: "input-xxlarge"
+    = f.label :headline, "Titolo"
+    = f.text_field :headline, class: "input-block-level"
   .fields
-    = f.label :startDate
+    = f.label :startDate, "Data inizio"
     = f.text_field :startDate
 
   .fields
-    = f.label :endDate
+    = f.label :endDate, "Data fine"
     = f.text_field :endDate
 
   .fields
-    = f.label :text
-    = f.text_area :text, class: "input-xxlarge"
+    = f.label :text, "Testo"
+    = f.text_area :text, class: "input-block-level"
 
   .fields
     = f.label :media
-    = f.text_field :media
+    = f.text_field :media, class: "input-block-level"
 
   .fields
-    = f.label :credit
-    = f.text_field :credit, class: "input-xxlarge"
+    = f.label :credit, "Crediti"
+    = f.text_field :credit, class: "input-block-level"
 
   .fields
-    = f.label :caption
-    = f.text_field :caption, class: "input-xxlarge"
+    = f.label :caption, "Legenda"
+    = f.text_field :caption, class: "input-block-level"
 
   .fields
     = f.label :thumbnail
-    = f.text_field :thumbnail, class: "input-xxlarge"
+    = f.text_field :thumbnail, class: "input-block-level"
 
   .fields
     = f.label :media_filename
-    = f.text_field :media_filename, class: "input-xxlarge"
+    = f.text_field :media_filename, class: "input-block-level"
 
-  .actions
+  %fieldset
+    %legend
+      Collega l'evento a linea del tempo:  
+    .fields
+      = hidden_field_tag "event[timeline_ids][]", nil
+      - Timeline.all.each do |timeline|
+        = check_box_tag "event[timeline_ids][]", timeline.id, @event.timeline_ids.include?(timeline.id), id: dom_id(timeline)
+        = label_tag dom_id(timeline), timeline.headline, style: "display:inline"
+        %br
+    %br
+  .form-actions
     = f.submit 'Salva', class: "btn btn-primary"
+
+
+
