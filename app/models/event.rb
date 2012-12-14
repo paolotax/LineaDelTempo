@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
     attr_accessible :caption, :credit, :endDate, :headline, :media, :media_filename, :startDate, :text, :thumbnail,
       :timeline_ids
 
-    has_many :timeline_events
+    has_many :timeline_events, dependent: :destroy
     has_many :timelines, :through => :timeline_events
 
     validates :startDate, :headline, :presence => true
@@ -36,9 +36,8 @@ class Event < ActiveRecord::Base
         sort  { by :startDate, 'asc' }     
       end
     end
-
-
     # END ElasticSearch setup
+
 
     # def start_date
     #   short_date(:startDate)
